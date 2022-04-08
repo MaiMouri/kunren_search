@@ -1,0 +1,35 @@
+import React, { useState } from 'react';
+import "./Expenses.css";
+import Card from './Card';
+import ExpensesFilter from "./ExpensesFilter";
+import ExpensesChart from "./ExpensesChart";
+import ExpensesList from "./ExpensesList";
+// import Sample from "./Slider/Slider"
+import RangeSlider from "./Slider/Slider"
+import MultipleSelectChip from "./Select/Select"
+
+function Expenses(props) {
+  const [filteredYear, setFilteredYear] = useState('2020');
+
+  const filterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
+
+  const filteredExpenses = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
+  return (
+    <div>
+      <Card className="expenses">
+        <RangeSlider />
+        <MultipleSelectChip />
+        <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
+        <ExpensesChart expenses={filteredExpenses} />
+        <ExpensesList items={filteredExpenses} />
+      </Card>
+    </div>
+  );
+}
+
+export default Expenses;
