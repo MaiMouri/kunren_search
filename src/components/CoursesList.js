@@ -4,7 +4,6 @@ import CourseItem from "./CourseItem";
 import './CoursesList.css'
 
 const CoursesList = (props) => {
-  // console.log(props);
   if (props.items.length === 0) {
     return <h2 className="courses-list__fallback">Found no courses.</h2>;
   }

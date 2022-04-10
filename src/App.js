@@ -44,8 +44,8 @@ function App() {
   return (
     <div>
       <h2>第4次産業革命スキル習得講座検索</h2>
-      <NewExpense onAddExpense={addExpensesHandler} />
-      <Expenses items={expenses} />
+      {/* <NewExpense onAddExpense={addExpensesHandler} /> */}
+      {/* <Expenses items={expenses} /> */}
       <Courses items={courses} />
     </div>
   );

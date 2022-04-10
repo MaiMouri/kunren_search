@@ -52,7 +52,7 @@ export default function RangeSlider(props) {
   return (
     <Box sx={{ width: 400 }}>
       <Typography id="non-linear-slider" gutterBottom>
-        Tuition: {valueLabelFormat(calculateValue(value))}
+        Tuition: {value[0]} 〜 {value[1]}
       </Typography>
       <p style={style}>Course fee</p>
       <Slider

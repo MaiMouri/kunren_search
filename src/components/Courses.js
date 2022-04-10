@@ -7,6 +7,7 @@ import CoursesList from "./CoursesList";
 // import Sample from "./Slider/Slider"
 import RangeSlider from "./Slider/Slider"
 import MultipleSelectChip from "./Select/Select"
+import Check from './Check/Check';
 
 function Courses(props) {
   console.log(props);
@@ -36,8 +37,16 @@ function Courses(props) {
     '通信']);
 
   const attendChangeHandler = (selectedAttend) => {
-    console.log('Attend way changed')
+    console.log('Attend way changed', selectedAttend)
     setSelectedAttend(selectedAttend);
+  };
+
+  // Tuition
+  const [checkedTuition, setCheckedTuition] = useState([true, false, false, true, true]);
+
+  const TuitionChangeHandler = (checkedTuition) => {
+    setCheckedTuition(checkedTuition);
+    console.log('Checked changed', checkedTuition)
   };
 
   const filteredCourses = props.items.filter((course) => {
@@ -48,17 +57,20 @@ function Courses(props) {
     return tuition <= filteredTuition[1]
       && tuition >= filteredTuition[0]
       && term <= filteredTerm[1]
-      && attend === 'eラーニング';
+      // && attend === 'eラーニング';
+      && attend.split('、').filter((w) => selectedAttend.indexOf(w) !== -1).length !== 0;
   });
 
   return (
     <div>
-      <p>test{filteredTuition}</p>
+      <p>Find the best course for you!</p>
       <Card className="courses">
+        <Check checked={checkedTuition} onChangeChecked={TuitionChangeHandler} />
         <RangeSlider selected={filteredTerm} onChangeFilter={rangeChangeHandler} onChangeFilter2={rangeChangeHandler2} />
         <MultipleSelectChip items={selectedAttend} onChangeFilter={attendChangeHandler} />
         {/* <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
         <ExpensesChart expenses={filteredExpenses} /> */}
+        {filteredCourses.length} courses
         <CoursesList items={filteredCourses} />
       </Card>
     </div>
