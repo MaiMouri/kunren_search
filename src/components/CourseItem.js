@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 
 import './CourseItem.css';
-import ExpenseDate from './ExpenseDate';
 import Card from './Card';
-// import { faCoffee } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function CourseItem(props) {
   // const [title, setTitle] = useState(props.title);
   const [name, setName] = useState(props.name);
-  console.log(props);
-  // const schoolName = props.
+  // 当てはまる全てのコースを表示
+  // console.log(props);
 
   const clickHandler = () => {
     setName('Updated!');

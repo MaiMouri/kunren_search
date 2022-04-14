@@ -46,15 +46,15 @@ export default function RangeSlider(props) {
   };
 
   const style = {
-    color: 'white'
+    color: 'gray'
   }
 
   return (
     <Box sx={{ width: 400 }}>
       <Typography id="non-linear-slider" gutterBottom>
-        Tuition: {value[0]} 〜 {value[1]}
+        Duration: {value2[0]}ヶ月 〜 {value2[1]}ヶ月
       </Typography>
-      <p style={style}>Course fee</p>
+      {/* <p style={style}>Course fee</p>
       <Slider
         value={value}
         min={5}
@@ -66,7 +66,7 @@ export default function RangeSlider(props) {
         onChange={handleChange}
         valueLabelDisplay="auto"
         getAriaLabel={() => 'Course fee'}
-      />
+      /> */}
       <p style={style}>Course duration</p>
       <Slider
         getAriaLabel={() => 'Course duration'}

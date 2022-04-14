@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 // import ExpenseItem from "./components/ExpenseItem";
 import Expenses from "./components/Expenses";
 import Courses from "./components/Courses";
-import NewExpense from "./components/NewExpense/NewExpense";
+// import NewExpense from "./components/NewExpense/NewExpense";
 
 const jsonData = require('./Courses.json');
-console.log(typeof (jsonData));
 
 const DUMMY_EXPENSES = [
   {
@@ -30,15 +29,15 @@ const DUMMY_EXPENSES = [
 ];
 
 function App() {
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  // const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
   const [courses, setCourses] = useState(jsonData);
 
   // DELETE add new expenses
-  const addExpensesHandler = expense => {
-    setExpenses((prevExpenses) => {
-      return [expense, ...prevExpenses];
-    });
-  };
+  // const addExpensesHandler = expense => {
+  //   setExpenses((prevExpenses) => {
+  //     return [expense, ...prevExpenses];
+  //   });
+  // };
 
 
   return (
