@@ -3,41 +3,18 @@ import React from "react";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
+import { FcCheckmark } from "react-icons/fc";
 
 function valuetext(value) {
   return `${value}°C`;
 }
 
-function valueLabelFormat(value) {
-  const units = ['KB', 'MB', 'GB', 'TB'];
-
-  let unitIndex = 0;
-  let scaledValue = value;
-
-  // while (scaledValue >= 1024 && unitIndex < units.length - 1) {
-  //   unitIndex += 1;
-  //   scaledValue /= 1024;
-  // }
-
-  // return `${scaledValue} ${units[unitIndex]}`;
-  return `${scaledValue / 10000} 万円`;
-}
 function valueMonthFormat(value) {
   return `${value} ヶ月
   `;
 }
 
-function calculateValue(value) {
-  return value;
-}
-
 export default function RangeSlider(props) {
-  const [value, setValue] = React.useState([110000, 200000]);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-    props.onChangeFilter(event.target.value);
-  };
   const [value2, setValue2] = React.useState([2, 6]);
 
   const handleChange2 = (event, newValue) => {
@@ -45,29 +22,14 @@ export default function RangeSlider(props) {
     props.onChangeFilter2(event.target.value);
   };
 
-  const style = {
-    color: 'gray'
-  }
-
   return (
-    <Box sx={{ width: 400 }}>
-      <Typography id="non-linear-slider" gutterBottom>
-        Duration: {value2[0]}ヶ月 〜 {value2[1]}ヶ月
+    <Box sx={{ width: 400, padding: 1 }}>
+      <h3 className='filter-title'><FcCheckmark /> 訓練期間:</h3>
+      <Typography id="non-linear-slider" variant="h5" gutterBottom>
+        {value2[0]}ヶ月 〜 {value2[1]}ヶ月
       </Typography>
-      {/* <p style={style}>Course fee</p>
-      <Slider
-        value={value}
-        min={5}
-        max={1000000}
-        step={10000}
-        scale={calculateValue}
-        getAriaValueText={valueLabelFormat}
-        valueLabelFormat={valueLabelFormat}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        getAriaLabel={() => 'Course fee'}
-      /> */}
-      <p style={style}>Course duration</p>
+
+      {/* <p style={style}>Choose the duration</p> */}
       <Slider
         getAriaLabel={() => 'Course duration'}
         value={value2}

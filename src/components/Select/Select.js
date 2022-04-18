@@ -7,6 +7,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
+import { FcCheckmark } from "react-icons/fc";
+import './Select.css'
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -14,7 +16,7 @@ const MenuProps = {
   PaperProps: {
     style: {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 300,
+      width: 400,
       left: 9
     },
   },
@@ -56,13 +58,13 @@ export default function MultipleSelectChip(props) {
 
   const chipDelete = (option) => {
     setPersonOption(personOption.filter(value => value !== option))
-    console.log('change');
     console.log(personOption.filter(value => value !== option));
   }
 
   return (
-    <div>
-      <FormControl sx={{ m: 1, width: 400 }}>
+    <div className='select-container'>
+      <h3 className='filter-title'><FcCheckmark /> 実施方法: </h3>
+      <FormControl sx={{ m: 1, maxWidth: 600 }}>
         <InputLabel id="multiple-chip-label">Attend</InputLabel>
         <Select
           labelId="multiple-chip-label"

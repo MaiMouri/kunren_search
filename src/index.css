@@ -13,3 +13,21 @@ body {
   background-color: #3f3f3f;
 }
 
+.main-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.main-container > a{
+  /* text-decoration: none; */
+  color: lightgray;
+}
+
+.text-white{
+  color:white;
+}
+
+h3 {
+  color:#292929;
+}

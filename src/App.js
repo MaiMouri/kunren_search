@@ -1,48 +1,19 @@
 import React, { useState } from 'react';
-// import ExpenseItem from "./components/ExpenseItem";
-import Expenses from "./components/Expenses";
 import Courses from "./components/Courses";
 // import NewExpense from "./components/NewExpense/NewExpense";
+import { BiSearch } from 'react-icons/bi';
 
 const jsonData = require('./Courses.json');
 
-const DUMMY_EXPENSES = [
-  {
-    id: 'e1',
-    title: 'Toilet Paper',
-    amount: 94.12,
-    date: new Date(2020, 7, 14),
-  },
-  { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
-  {
-    id: 'e3',
-    title: 'Car Insurance',
-    amount: 294.67,
-    date: new Date(2021, 2, 28),
-  },
-  {
-    id: 'e4',
-    title: 'New Desk (Wooden)',
-    amount: 450,
-    date: new Date(2021, 5, 12),
-  },
-];
 
 function App() {
-  // const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
   const [courses, setCourses] = useState(jsonData);
 
-  // DELETE add new expenses
-  // const addExpensesHandler = expense => {
-  //   setExpenses((prevExpenses) => {
-  //     return [expense, ...prevExpenses];
-  //   });
-  // };
-
-
   return (
-    <div>
-      <h2>第4次産業革命スキル習得講座検索</h2>
+    <div className='main-container'>
+      <h2 className='text-white'>第4次産業革命スキル習得講座検索</h2>
+      <BiSearch /> <a href='https://www.kyufu.mhlw.go.jp/kensaku/SCM/SCM101Scr02X/SCM101Scr02XInit.form'>[厚生労働省]教育訓練給付金検索はこちら</a><br />
+      <BiSearch /> <a href='https://www.meti.go.jp/policy/economy/jinzai/reskillprograms/pdf/kouzaichiran.pdf'>[経済産業省]Reスキル講座はこちら</a>
       {/* <NewExpense onAddExpense={addExpensesHandler} /> */}
       {/* <Expenses items={expenses} /> */}
       <Courses items={courses} />

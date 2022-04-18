@@ -2,6 +2,8 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { FcCheckmark } from "react-icons/fc";
+import './Check.css'
 
 export default function Check(props) {
   const [checked, setChecked] = React.useState([true, true, true, true, true, true]);
@@ -76,7 +78,8 @@ export default function Check(props) {
   );
 
   return (
-    <div>
+    <div className='check-container'>
+      <h3 className='filter-title'><FcCheckmark /> 講座受講料:</h3>
       <FormControlLabel
         label="すべて"
         control={

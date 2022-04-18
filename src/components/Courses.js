@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import "./Courses.css";
 import Card from './Card';
-import ExpensesFilter from "./ExpensesFilter";
-import ExpensesChart from "./ExpensesChart";
 import CoursesList from "./CoursesList";
 // import Sample from "./Slider/Slider"
 import RangeSlider from "./Slider/Slider"
@@ -10,13 +8,9 @@ import MultipleSelectChip from "./Select/Select"
 import Check from './Check/Check';
 
 function Courses(props) {
-  // console.log(props);
-  const [filteredTuition, setFilteredTuition] = useState([150000, 200000]);
 
-  const rangeChangeHandler = (selectedTuition) => {
-    console.log(selectedTuition);
-    setFilteredTuition(selectedTuition);
-  };
+  // style
+  const resultStyle = { 'fontSize': '18px' }
 
   // Term
   const [filteredTerm, setFilteredTerm] = useState([2, 6]);
@@ -88,8 +82,6 @@ function Courses(props) {
     const attend = course['実施方法'];
 
     return judge(tuition)
-      // tuition <= filteredTuition[1]
-      // && tuition >= filteredTuition[0]
       && term >= filteredTerm[0]
       && term <= filteredTerm[1]
       && attend.split('、').filter((w) => selectedAttend.indexOf(w) !== -1).length !== 0;
@@ -100,11 +92,9 @@ function Courses(props) {
       <p>Find the best course for you!</p>
       <Card className="courses">
         <Check checked={checkedTuition} onChangeChecked={TuitionChangeHandler} />
-        <RangeSlider selected={filteredTerm} onChangeFilter={rangeChangeHandler} onChangeFilter2={rangeChangeHandler2} />
+        <RangeSlider selected={filteredTerm} onChangeFilter2={rangeChangeHandler2} />
         <MultipleSelectChip items={selectedAttend} onChangeFilter={attendChangeHandler} />
-        {/* <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-        <ExpensesChart expenses={filteredExpenses} /> */}
-        {filteredCourses.length} courses
+        <div className='result-count'><span style={resultStyle}>{filteredCourses.length}</span> courses matched!</div>
         <CoursesList items={filteredCourses} />
       </Card>
     </div>

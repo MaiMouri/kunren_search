@@ -6,7 +6,7 @@
 .course-item-container{
   display: grid;
   /* grid-template-columns: 300px; */
-  grid-template-rows: 210px 80px;
+  grid-template-rows: 230px 80px;
   grid-template-areas: "text" "stats";
 
   border-radius: 18px;

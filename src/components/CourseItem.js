@@ -5,23 +5,23 @@ import Card from './Card';
 
 function CourseItem(props) {
   // const [title, setTitle] = useState(props.title);
-  const [name, setName] = useState(props.name);
+  // const [name, setName] = useState(props.name);
   // 当てはまる全てのコースを表示
   // console.log(props);
 
-  const clickHandler = () => {
-    setName('Updated!');
-    console.log(name);
-  };
+  // const clickHandler = () => {
+  //   setName('Updated!');
+  //   console.log(name);
+  // };
 
   return (
-    <li>
+    <li className="course-items">
       <Card className="course-item-container">
         {/* <courseDate date={props.date}/> */}
         <div className="card-text">
           <div className="course-item">
             <div className="course-item__description">
-              <h2>{name}</h2>
+              <h2>{props.name}</h2>
               <div className="course-item__price">{props.tuition}</div>
             </div>
             {/* <button onClick={clickHandler}>Change</button> */}
