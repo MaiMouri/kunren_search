@@ -42,7 +42,7 @@ function getStyles(option, personOption, theme) {
 export default function MultipleSelectChip(props) {
   const theme = useTheme();
   const [personOption, setPersonOption] = React.useState(options);
-  console.log(props);
+  // console.log(props);
 
   const handleChange = (event) => {
     const {
@@ -52,13 +52,14 @@ export default function MultipleSelectChip(props) {
       // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
     );
-    console.log(event.target.value);
+    // console.log(event.target.value);
     props.onChangeFilter(event.target.value);
   };
 
   const chipDelete = (option) => {
     setPersonOption(personOption.filter(value => value !== option))
-    console.log(personOption.filter(value => value !== option));
+    // console.log(personOption.filter(value => value !== option));
+    props.onChangeFilter(personOption.filter(value => value !== option));
   }
 
   return (
