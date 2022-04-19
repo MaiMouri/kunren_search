@@ -16,7 +16,7 @@ body {
 .main-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 20px;
 }
 
 .main-container > a{
