@@ -8,7 +8,7 @@
 - 一画面で大まかな講座内容を掴みたい
 - 所在地などで比較したい
 
-⏬ メイン画面　：　一覧では講座運営者と住所などの情報しか得られない
+⏬ 厚生労働省サイトメイン画面　：　一覧では講座運営者と住所などの情報しか得られない
 <img width="1080" alt="kunrenkouza_home" src="https://user-images.githubusercontent.com/77220332/178138634-37c3895a-7a00-4fa5-8b9f-16583ea4b752.png">
 
 
@@ -21,6 +21,7 @@ https://kunren-search.herokuapp.com/
 
 ### リソース
 <教育訓練給付制度>対応講座の検索サイト
+https://www.kyufu.mhlw.go.jp/kensaku/SCM/SCM101Scr02X/SCM101Scr02XInit.form
 
 <img width="1003" alt="Screen Shot 2022-07-10 at 4 05 55" src="https://user-images.githubusercontent.com/77220332/178119476-66d2c969-c93a-4dc7-b8cd-6b1f7c0485ad.png">
 
