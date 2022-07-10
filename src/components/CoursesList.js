@@ -28,9 +28,6 @@ const CoursesList = (props) => {
           address={course['address']}
           tel={course['tel']}
         />
-        // <CourseItem
-        //   key={course.id}
-        // />
       ))}
     </ul>
   );
