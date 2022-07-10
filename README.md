@@ -34,6 +34,9 @@ playwrightを使用しました。
 
 <!-- https://user-images.githubusercontent.com/77220332/178119535-d6a52157-a7c7-4397-b2aa-7eae94597010.mov -->
 
+- javascript 
+- React
+
 
 
 
